@@ -123,7 +123,7 @@
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[New Dictionary(Of String, String)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="510,1542" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[ContinueResponse = &quot;Yes&quot;]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="510,1542" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
       <ui:InterruptibleDoWhile.Body>
         <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,1404" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
@@ -192,12 +192,8 @@
             <InvokeMethod.TargetObject>
               <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[StationFare]</InArgument>
             </InvokeMethod.TargetObject>
-            <InArgument x:TypeArguments="x:String">
-              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="StationName" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:String">
-              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Fare" />
-            </InArgument>
+            <InArgument x:TypeArguments="x:String">[StationName]</InArgument>
+            <InArgument x:TypeArguments="x:String">[Fare]</InArgument>
           </InvokeMethod>
           <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="434,300.6666666666667" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Do you want to add more stations?" OptionsString="Yes;No" Title="Continue Data Entry">
             <ui:InputDialog.Result>
@@ -206,9 +202,6 @@
           </ui:InputDialog>
         </Sequence>
       </ui:InterruptibleDoWhile.Body>
-      <ui:InterruptibleDoWhile.Condition>
-        <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ContinueResponse = &quot;Yes&quot;" />
-      </ui:InterruptibleDoWhile.Condition>
     </ui:InterruptibleDoWhile>
     <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[TrainLineStation]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="510,501.3333333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
@@ -222,7 +215,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[CurrentRow.Item(&quot;StationName&quot;).ToString]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;Station Name: &quot; + CurrentRow.Item(&quot;StationName&quot;).ToString]" />
             <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[StationFare.Item(CurrentRow.Item(&quot;StationName&quot;).ToString)]" />
           </Sequence>
         </ActivityAction>
