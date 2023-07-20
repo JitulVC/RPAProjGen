@@ -1,0 +1,48 @@
+﻿{
+  "Metadata": {
+    "Id": "491a93e9-3395-4863-88dd-84e286825a5b",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "Station Fare Creation",
+    "Width": 400,
+    "Height": 300,
+    "Theme": "Sandstone",
+    "ShowInTaskbar": false,
+    "ShowMargin": true,
+    "CustomStyle": ""
+  },
+  "Data": {
+    "components": [
+      {
+        "label": "Train Line Name",
+        "tableView": true,
+        "key": "trainLineName",
+        "type": "textfield",
+        "input": true
+      },
+      {
+        "label": "Station Name",
+        "tableView": true,
+        "key": "stationName",
+        "type": "textfield",
+        "input": true
+      },
+      {
+        "label": "Fare",
+        "tableView": true,
+        "key": "fare",
+        "type": "textfield",
+        "input": true
+      },
+      {
+        "type": "button",
+        "label": "Submit",
+        "key": "submit",
+        "disableOnInvalid": true,
+        "input": true,
+        "tableView": false
+      }
+    ]
+  }
+}
