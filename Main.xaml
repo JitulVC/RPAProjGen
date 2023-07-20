@@ -216,7 +216,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;Station Name: &quot; + CurrentRow.Item(&quot;StationName&quot;).ToString]" />
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[StationFare.Item(CurrentRow.Item(&quot;StationName&quot;).ToString)]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;Fare Amount: &quot; + StationFare.Item(CurrentRow.Item(&quot;StationName&quot;).ToString)]" />
           </Sequence>
         </ActivityAction>
       </ui:ForEachRow.Body>
